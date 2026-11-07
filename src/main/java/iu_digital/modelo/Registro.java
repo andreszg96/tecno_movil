@@ -1,7 +1,6 @@
 package iu_digital.modelo;
 
 import java.time.LocalDateTime;
-import iu_digital.modelo.Accion;
 
 public record Registro(String idUsuario,
                        String ruta,
@@ -9,17 +8,15 @@ public record Registro(String idUsuario,
                        Accion accion,
                        LocalDateTime timestamp) {
 
-
     public boolean esEntrada() {
-        return Accion = Accion.ENTRADA;
-
+        return this.accion == Accion.ENTRADA;
     }
 
     public boolean esSalida() {
-        return Accion = Accion.SALIDA;
+        return this.accion == Accion.SALIDA;
     }
-    public int Hora(){
-        return timestamp.getHour();
+
+    public int hora() {
+        return this.timestamp.getHour();
     }
 }
-
